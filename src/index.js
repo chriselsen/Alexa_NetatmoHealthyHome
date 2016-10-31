@@ -144,8 +144,8 @@ function netatmoGetAuthKey(callback) {
     post_req.write(post_data);
     post_req.end();
     
-    post_req.on('error', (e) => {
-        console.error(e);
+    post_req.on('error', function (e) {
+        console.log("Communications error: " + e.message);
     });
 }
 
@@ -162,8 +162,10 @@ function netatmoGetValue(authKey, callback) {
 		    console.log('Data: ' + JSON.stringify(jsonContent.body.devices[0]));
 		    callback(JSON.stringify(jsonContent.body.devices[0]));
         });
-	}).on('error', (e) => {
-        console.error(e);
+	});
+	
+	post_req.on('error', function (e) {
+        console.log("Communications error: " + e.message);
     });
 }
 
