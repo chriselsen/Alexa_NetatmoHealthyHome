@@ -46,6 +46,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# =========================
 # Project specific files
+# =========================
 *.zip
 config.json
