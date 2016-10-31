@@ -1,5 +1,5 @@
 # Netatmo Healthy Home
-A simple AWS Lambda (http://aws.amazon.com/lambda) function that interacts with your Netatmo Healthy Home (https://www.netatmo.com/product/aircare/homecoach) device.
+A simple AWS Lambda (http://aws.amazon.com/lambda) function that interacts with your Netatmo Healthy Home (http://amzn.to/2f3FtYr) device.
 
 ## Setup
 To run this skill you need to do two things. The first is to deploy the code in lambda, and the second is to configure the Alexa skill to use Lambda.
