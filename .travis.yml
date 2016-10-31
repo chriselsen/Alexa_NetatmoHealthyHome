@@ -3,4 +3,6 @@ node_js:
   - "4.3"
 before_script:
   - cp src/config.json.sample src/config.json
-script: node src/index.js  
+script:
+  - cd src
+  - node index.js  
