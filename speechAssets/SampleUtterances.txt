@@ -1,0 +1,28 @@
+HealthyHomeTemperatureIntent what's the temperature
+HealthyHomeTemperatureIntent for the temperature
+HealthyHomeTemperatureIntent for the indoor temperature
+HealthyHomeTemperatureIntent how many degrees is it
+HealthyHomeTemperatureIntent how hot is it
+HealthyHomeTemperatureIntent how cold is it
+HealthyHomeMaxTemperatureIntent what was the max temperature
+HealthyHomeMaxTemperatureIntent what was the maximum temperature
+HealthyHomeMaxTemperatureIntent what was the highest temperature
+HealthyHomeMaxTemperatureIntent for the highest temperature
+HealthyHomeMaxTemperatureIntent how hot was it
+HealthyHomeMinTemperatureIntent what was the min temperature
+HealthyHomeMinTemperatureIntent what was the minimum temperature
+HealthyHomeMinTemperatureIntent what was the lowest temperature
+HealthyHomeMinTemperatureIntent for the lowest temperature
+HealthyHomeMinTemperatureIntent how cold was it
+HealthyHomePressureIntent what's the pressure
+HealthyHomePressureIntent for the pressure
+HealthyHomePressureIntent for the indoor pressure
+HealthyHomeHumidityIntent what's the humidity
+HealthyHomeHumidityIntent for the humidity
+HealthyHomeHumidityIntent for the indoor humidity
+HealthyHomeHumidityIntent how humid is it
+HealthyHomeHumidityIntent what's the indoor humidity
+HealthyHomeCOOIntent what's the C O two level
+HealthyHomeCOOIntent what's the C O two concentration
+HealthyHomeCOOIntent for the C O two level
+HealthyHomeCOOIntent for the C O two concentration

@@ -1,0 +1,25 @@
+{
+  "intents": [
+    {
+      "intent": "HealthyHomeTemperatureIntent"
+    },
+    {
+      "intent": "HealthyHomeMinTemperatureIntent"
+    },
+    {
+      "intent": "HealthyHomeMaxTemperatureIntent"
+    },
+    {
+      "intent": "HealthyHomePressureIntent"
+    },
+    {
+      "intent": "HealthyHomeHumidityIntent"
+    },
+    {
+      "intent": "HealthyHomeCOOIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}
