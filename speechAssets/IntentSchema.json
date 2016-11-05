@@ -1,13 +1,22 @@
 {
   "intents": [
     {
-      "intent": "HealthyHomeTemperatureIntent"
+      "intent": "HealthyHomeTemperatureIntentCelsius"
     },
     {
-      "intent": "HealthyHomeMinTemperatureIntent"
+      "intent": "HealthyHomeTemperatureIntentFahrenheit"
     },
     {
-      "intent": "HealthyHomeMaxTemperatureIntent"
+      "intent": "HealthyHomeMinTemperatureIntentCelsius"
+    },
+    {
+      "intent": "HealthyHomeMaxTemperatureIntentCelsius"
+    },
+    {
+      "intent": "HealthyHomeMinTemperatureIntentFahrenheit"
+    },
+    {
+      "intent": "HealthyHomeMaxTemperatureIntentFahrenheit"
     },
     {
       "intent": "HealthyHomePressureIntent"

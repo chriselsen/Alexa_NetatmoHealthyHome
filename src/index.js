@@ -51,15 +51,23 @@ HealthyHome.prototype.eventHandlers.onSessionEnded = function (sessionEndedReque
 };
 
 HealthyHome.prototype.intentHandlers = {
-    // register custom intent handlers
-    "HealthyHomeTemperatureIntent": function (intent, session, response) {
-        netatmoHealthyHomeValue("Temp", response);
+    "HealthyHomeTemperatureIntentCelsius": function (intent, session, response) {
+        netatmoHealthyHomeValue("TempC", response);
     },
-    "HealthyHomeMinTemperatureIntent": function (intent, session, response) {
-        netatmoHealthyHomeValue("MinTemp", response);
+    "HealthyHomeTemperatureIntentFahrenheit": function (intent, session, response) {
+        netatmoHealthyHomeValue("TempF", response);
     },
-    "HealthyHomeMaxTemperatureIntent": function (intent, session, response) {
-        netatmoHealthyHomeValue("MaxTemp", response);
+    "HealthyHomeMinTemperatureIntentCelsius": function (intent, session, response) {
+        netatmoHealthyHomeValue("MinTempC", response);
+    },
+    "HealthyHomeMaxTemperatureIntentCelsius": function (intent, session, response) {
+        netatmoHealthyHomeValue("MaxTempC", response);
+    },
+    "HealthyHomeMinTemperatureIntentFahrenheit": function (intent, session, response) {
+        netatmoHealthyHomeValue("MinTempF", response);
+    },
+    "HealthyHomeMaxTemperatureIntentFahrenheit": function (intent, session, response) {
+        netatmoHealthyHomeValue("MaxTempF", response);
     },
     "HealthyHomePressureIntent": function (intent, session, response) {
         netatmoHealthyHomeValue("Pressure", response);
@@ -76,28 +84,37 @@ HealthyHome.prototype.intentHandlers = {
 };
 
 function netatmoHealthyHomeValue(value, response) {
-    netatmoGetAuthKey(function (AuthKey) { 
+    netatmoGetAuthKey(function (AuthKey) {
         netatmoGetValue(AuthKey, function (Data) {
             var jsonContent = JSON.parse(Data);
             switch(value){
-                case "Temp": 
-                    response.tell("The current temperature is " + jsonContent.dashboard_data.Temperature + " degrees celsius and is trending " + jsonContent.dashboard_data.temp_trend + ".");
+                case "TempC":
+                    response.tell("The current temperature is " + jsonContent.dashboard_data.Temperature + " degrees Celsius and is trending " + jsonContent.dashboard_data.temp_trend + ".");
                     break;
-                case "MinTemp": 
-                    response.tell("The minimum temperature was " + jsonContent.dashboard_data.min_temp + " degrees celsius within the past 24 hours.");
-                    break;    
-                case "MaxTemp": 
-                    response.tell("The maximum temperature was " + jsonContent.dashboard_data.max_temp + " degrees celsius within the past 24 hours.");
-                    break;    
-                case "Pressure": 
+                case "TempF":
+                        response.tell("The current temperature is " + ( ( jsonContent.dashboard_data.Temperature * 1.8 ) + 32 ) + " degrees Fahrenheit and is trending " + jsonContent.dashboard_data.temp_trend + ".");
+                        break;
+                case "MinTempC":
+                    response.tell("The minimum temperature was " + jsonContent.dashboard_data.min_temp + " degrees Celsius within the past 24 hours.");
+                    break;
+                case "MaxTempC":
+                    response.tell("The maximum temperature was " + jsonContent.dashboard_data.max_temp + " degrees Celsius within the past 24 hours.");
+                    break;
+                case "MinTempF":
+                        response.tell("The minimum temperature was " + ( ( jsonContent.dashboard_data.min_temp * 1.8 ) + 32 ) + " degrees Fahrenheit within the past 24 hours.");
+                        break;
+                case "MaxTempF":
+                        response.tell("The maximum temperature was " + ( ( jsonContent.dashboard_data.max_temp * 1.8 ) + 32 ) + " degrees Fahrenheit within the past 24 hours.");
+                        break;
+                case "Pressure":
                     response.tell("The current pressure is " + jsonContent.dashboard_data.Pressure + " millibar and is trending " + jsonContent.dashboard_data.pressure_trend + ".");
                     break;
-                case "Humidity": 
+                case "Humidity":
                     response.tell("The current relative humidity is " + jsonContent.dashboard_data.Humidity + " percent.");
                     break;
-                case "CO2": 
+                case "CO2":
                     response.tell("The current CO2 concentration is " + jsonContent.dashboard_data.CO2 + " parts per million.");
-                    break;    
+                    break;
                 default:
                     response.tell("Sorry, this value is unknown.");
             }
@@ -108,7 +125,7 @@ function netatmoHealthyHomeValue(value, response) {
 function netatmoGetAuthKey(callback) {
     var https = require('https');
     var querystring = require('querystring');
-    
+
     var post_data = querystring.stringify({
         'grant_type' : 'password',
         'client_id' : config.NetatmoClientID,
@@ -118,7 +135,7 @@ function netatmoGetAuthKey(callback) {
         'scope' : 'read_homecoach'
     });
 
-  
+
     var post_options = {
         hostname: 'api.netatmo.com',
         port: '443',
@@ -133,17 +150,17 @@ function netatmoGetAuthKey(callback) {
 
     var post_req = https.request(post_options, function(res) {
         res.setEncoding('utf8');
- 
+
         res.on('data', function (chunk) {
             var jsonContent = JSON.parse(chunk);
             console.log('Access Token: ' + jsonContent.access_token);
             callback(jsonContent.access_token);
         });
     });
-    
+
     post_req.write(post_data);
     post_req.end();
-    
+
     post_req.on('error', function (e) {
         console.log("Communications error: " + e.message);
     });
@@ -151,21 +168,21 @@ function netatmoGetAuthKey(callback) {
 
 function netatmoGetValue(authKey, callback) {
     var https = require('https');
-    
+
     var endpoint = 'https://api.netatmo.com/api/gethomecoachsdata';
     var deviceID = config.NetatmoDeviceID;
-	var queryString = '?access_token=' + authKey + '&device_id=' + deviceID;
+  	var queryString = '?access_token=' + authKey + '&device_id=' + deviceID;
 
-	https.get(endpoint + queryString, function (res) {
-        res.on('data', function (data) {
-		    var jsonContent = JSON.parse(data);
-		    console.log('Data: ' + JSON.stringify(jsonContent.body.devices[0]));
-		    callback(JSON.stringify(jsonContent.body.devices[0]));
-        });
-	});
-	
-	post_req.on('error', function (e) {
-        console.log("Communications error: " + e.message);
+  	var post_req = https.get(endpoint + queryString, function (res) {
+          res.on('data', function (data) {
+  		    var jsonContent = JSON.parse(data);
+  		    console.log('Data: ' + JSON.stringify(jsonContent.body.devices[0]));
+  		    callback(JSON.stringify(jsonContent.body.devices[0]));
+          });
+  	});
+
+  	post_req.on('error', function (e) {
+          console.log("Communications error: " + e.message);
     });
 }
 

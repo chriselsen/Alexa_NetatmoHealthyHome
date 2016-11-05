@@ -1,19 +1,43 @@
-HealthyHomeTemperatureIntent what's the temperature
-HealthyHomeTemperatureIntent for the temperature
-HealthyHomeTemperatureIntent for the indoor temperature
-HealthyHomeTemperatureIntent how many degrees is it
-HealthyHomeTemperatureIntent how hot is it
-HealthyHomeTemperatureIntent how cold is it
-HealthyHomeMaxTemperatureIntent what was the max temperature
-HealthyHomeMaxTemperatureIntent what was the maximum temperature
-HealthyHomeMaxTemperatureIntent what was the highest temperature
-HealthyHomeMaxTemperatureIntent for the highest temperature
-HealthyHomeMaxTemperatureIntent how hot was it
-HealthyHomeMinTemperatureIntent what was the min temperature
-HealthyHomeMinTemperatureIntent what was the minimum temperature
-HealthyHomeMinTemperatureIntent what was the lowest temperature
-HealthyHomeMinTemperatureIntent for the lowest temperature
-HealthyHomeMinTemperatureIntent how cold was it
+HealthyHomeTemperatureIntentCelsius what's the temperature
+HealthyHomeTemperatureIntentCelsius for the temperature
+HealthyHomeTemperatureIntentCelsius for the indoor temperature
+HealthyHomeTemperatureIntentCelsius how many degrees is it
+HealthyHomeTemperatureIntentCelsius how hot is it
+HealthyHomeTemperatureIntentCelsius how cold is it
+HealthyHomeTemperatureIntentFahrenheit what's the temperature in Fahrenheit
+HealthyHomeTemperatureIntentFahrenheit for the temperature in Fahrenheit
+HealthyHomeTemperatureIntentFahrenheit for the indoor temperature in Fahrenheit
+HealthyHomeTemperatureIntentFahrenheit how many degrees is it  in Fahrenheit
+HealthyHomeTemperatureIntentFahrenheit how hot is it  in Fahrenheit
+HealthyHomeTemperatureIntentFahrenheit how cold is it  in Fahrenheit
+HealthyHomeMaxTemperatureIntentCelsius what was the max temperature
+HealthyHomeMaxTemperatureIntentCelsius what was the maximum temperature
+HealthyHomeMaxTemperatureIntentCelsius what is the max temperature
+HealthyHomeMaxTemperatureIntentCelsius what is the maximum temperature
+HealthyHomeMaxTemperatureIntentCelsius what was the highest temperature
+HealthyHomeMaxTemperatureIntentCelsius for the highest temperature
+HealthyHomeMaxTemperatureIntentFahrenheit what was the max temperature in Fahrenheit
+HealthyHomeMaxTemperatureIntentFahrenheit what was the maximum temperature in Fahrenheit
+HealthyHomeMaxTemperatureIntentFahrenheit what is the max temperature in Fahrenheit
+HealthyHomeMaxTemperatureIntentFahrenheit what is the maximum temperature in Fahrenheit
+HealthyHomeMaxTemperatureIntentFahrenheit what was the highest temperature in Fahrenheit
+HealthyHomeMaxTemperatureIntentFahrenheit for the highest temperature in Fahrenheit
+HealthyHomeMaxTemperatureIntentCelsius how hot was it
+HealthyHomeMinTemperatureIntentCelsius what was the min temperature
+HealthyHomeMinTemperatureIntentCelsius what was the minimum temperature
+HealthyHomeMinTemperatureIntentCelsius what was the lowest temperature
+HealthyHomeMinTemperatureIntentCelsius what is the min temperature
+HealthyHomeMinTemperatureIntentCelsius what is the minimum temperature
+HealthyHomeMinTemperatureIntentCelsius for the lowest temperature
+HealthyHomeMinTemperatureIntentCelsius how cold was it
+HealthyHomeMaxTemperatureIntentFahrenheit how hot was it in Fahrenheit
+HealthyHomeMinTemperatureIntentFahrenheit what was the min temperature in Fahrenheit
+HealthyHomeMinTemperatureIntentFahrenheit what was the minimum temperature in Fahrenheit
+HealthyHomeMinTemperatureIntentFahrenheit what was the lowest temperature in Fahrenheit
+HealthyHomeMinTemperatureIntentFahrenheit what is the min temperature in Fahrenheit
+HealthyHomeMinTemperatureIntentFahrenheit what is the minimum temperature in Fahrenheit
+HealthyHomeMinTemperatureIntentFahrenheit for the lowest temperature in Fahrenheit
+HealthyHomeMinTemperatureIntentFahrenheit how cold was it in Fahrenheit
 HealthyHomePressureIntent what's the pressure
 HealthyHomePressureIntent for the pressure
 HealthyHomePressureIntent for the indoor pressure
