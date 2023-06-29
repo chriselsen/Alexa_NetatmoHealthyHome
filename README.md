@@ -1,4 +1,4 @@
-# Netatmo Healthy Home [![Build Status](https://travis-ci.org/chriselsen/Alexa_NetatmoHealthyHome.svg?branch=master)](https://travis-ci.org/chriselsen/Alexa_NetatmoHealthyHome)
+# Netatmo Healthy Home
 A simple AWS Lambda (http://aws.amazon.com/lambda) function that interacts with your Netatmo Healthy Home (http://amzn.to/2f3FtYr) device.
 
 ## Setup
