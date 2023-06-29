@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-  - "6.10"
-before_script:
-  - cp src/config.json.sample src/config.json
-script:
-  - cd src
-  - node index.js  
